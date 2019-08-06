@@ -7,6 +7,11 @@
 //
 
 import UIKit
+enum SBButtonTappedType {
+    case cancel
+    case action
+    
+}
 // Bar Button Handling
 extension UIViewController{
     func addRightBarButton(title: String? = nil, image: UIImage? = nil, target: Any? = nil,selector: Selector? = nil){
@@ -95,5 +100,16 @@ extension UIViewController{
             return tab.topMostViewController()
         }
         return self.presentedViewController?.topMostViewController()
+    }
+    
+    func showError (title : String , message: String ,  actionTitle: String ,completion:@escaping(SBButtonTappedType)-> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { action in
+             completion(.cancel)
+        }))
+        alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.destructive, handler: { action in
+            completion(.action)
+        }))
+        self.present(alert, animated: true, completion:nil)
     }
 }

@@ -32,6 +32,7 @@
 		486D586D22F84B8500D49D45 /* DequeueInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D586C22F84B8500D49D45 /* DequeueInitializable.swift */; };
 		486D587022F84CA700D49D45 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */; };
 		486D587222F84D7F00D49D45 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D587122F84D7F00D49D45 /* General.swift */; };
+		E38D385522F96896007717DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D385422F96896007717DE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		486D586C22F84B8500D49D45 /* DequeueInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DequeueInitializable.swift; sourceTree = "<group>"; };
 		486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		486D587122F84D7F00D49D45 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		E38D385422F96896007717DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */,
 				486D587122F84D7F00D49D45 /* General.swift */,
+				E38D385422F96896007717DE /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				486D585B22F84AA000D49D45 /* AlbumPhotosViewModel.swift in Sources */,
 				486D585D22F84AA000D49D45 /* AlbumPhotoCollectionViewCellViewModel.swift in Sources */,
 				486D585C22F84AA000D49D45 /* AlbumPhotosViewController.swift in Sources */,
+				E38D385522F96896007717DE /* Constants.swift in Sources */,
 				486D586022F84AA000D49D45 /* PhotosPickerController.swift in Sources */,
 				486D586122F84AA000D49D45 /* PhotosPickerCoordinator.swift in Sources */,
 				486D587222F84D7F00D49D45 /* General.swift in Sources */,
