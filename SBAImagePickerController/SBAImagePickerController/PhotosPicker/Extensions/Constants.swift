@@ -13,5 +13,7 @@ struct PhotoPermissionAlert {
     static let actionButtonTitle = "Settings"
 }
 struct NoPhotosInAlbum {
-    static let title = "There are no photos exists in this album"
+    static let title = "Whoops !!"
+    static let message = "Sorry this album does not contain any photo. Please select other albums to select photos "
+    static let image = "hg-error.png"
 }

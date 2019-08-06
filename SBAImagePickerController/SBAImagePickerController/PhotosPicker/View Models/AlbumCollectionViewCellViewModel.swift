@@ -28,7 +28,15 @@ class AlbumCollectionViewCellViewModelImp: AlbumCollectionViewCellViewModel {
     }
     
     func photoCount() -> String {
-        return collection.estimatedAssetCount != NSNotFound ? String(collection.estimatedAssetCount) : ""
+        var assetCount = collection.estimatedAssetCount
+        if assetCount == NSNotFound {
+            let fetchOptions = PHFetchOptions()
+            let videoPredicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.video.rawValue)
+            let imagePredicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
+            fetchOptions.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [videoPredicate,imagePredicate])
+            assetCount = PHAsset.fetchAssets(in: collection, options: fetchOptions).count
+        }
+        return  String(assetCount)
     }
     
     func fetchFirstImageThumbnail(completionBlock: @escaping PhotosPickerControllerPicturesBlock) {

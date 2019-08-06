@@ -34,6 +34,7 @@
 		E38D385522F96896007717DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D385422F96896007717DE /* Constants.swift */; };
 		E3BF5EF622F96F1E006B9EA3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */; };
 		E3BF5EF822F98387006B9EA3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF5EF722F98387006B9EA3 /* UICollectionView+Extensions.swift */; };
+		E3BF5EFC22F99CBE006B9EA3 /* hg-error.png in Resources */ = {isa = PBXBuildFile; fileRef = E3BF5EFB22F99CBE006B9EA3 /* hg-error.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		E38D385422F96896007717DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		E3BF5EF722F98387006B9EA3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		E3BF5EFB22F99CBE006B9EA3 /* hg-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hg-error.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		4854A6A322F958800096CFB3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E3BF5EFB22F99CBE006B9EA3 /* hg-error.png */,
 				4854A6A622F959C00096CFB3 /* tick.png */,
 				4854A6A422F958910096CFB3 /* Placeholder.png */,
 			);
@@ -264,6 +267,7 @@
 				486D584522F84A7400D49D45 /* LaunchScreen.storyboard in Resources */,
 				4854A6A722F959C00096CFB3 /* tick.png in Resources */,
 				486D584222F84A7400D49D45 /* Assets.xcassets in Resources */,
+				E3BF5EFC22F99CBE006B9EA3 /* hg-error.png in Resources */,
 				486D584022F84A7300D49D45 /* Main.storyboard in Resources */,
 				4854A6A222F952A40096CFB3 /* SBAImagePickerController.storyboard in Resources */,
 			);

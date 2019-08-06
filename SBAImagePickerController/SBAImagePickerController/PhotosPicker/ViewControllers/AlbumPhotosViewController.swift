@@ -41,14 +41,12 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
     
     private func addEmptyDataSet() {
         
-        collectionView.setEmptyMessage(NoPhotosInAlbum.title)
-        
-//        collectionView.emptyDataSetView { view in
-//            view.titleLabelString(NSAttributedString.init(string: "txt_empty_album".localized()))
-//            .detailLabelString(NSAttributedString.init(string: "txt_empty_album_message".localized()))
-//        }
-//
-//        collectionView.reloadEmptyDataSet()
+         if (viewModel.numberOfRows() == 0) {
+            collectionView.setEmptyMessage(message: NoPhotosInAlbum.message, title: NoPhotosInAlbum.title, imageName: NoPhotosInAlbum.image, animate: true)
+         }else {
+            collectionView.restore()
+        }
+
     }
     
     func reload(at indexPath: IndexPath) {
@@ -67,7 +65,9 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
         if viewModel.showDone() {
             addRightBarButton(title: "Done")
         }
-        addEmptyDataSet()
+       
+          //  addEmptyDataSet()
+        
     }
     
     override func rightBarButtonAction() {
@@ -77,6 +77,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
 
 extension AlbumPhotosViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        addEmptyDataSet()
         return viewModel.numberOfRows()
     }
     

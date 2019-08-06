@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-public typealias cameraClosure = (_ image: [UIImage]?,_ skiped: Bool) -> Void
+public typealias cameraClosure = (_ images: [UIImage]?,_ skiped: Bool) -> Void
 
 public class PhotosPickerCoordinator {
     fileprivate let rootViewController: UIViewController
