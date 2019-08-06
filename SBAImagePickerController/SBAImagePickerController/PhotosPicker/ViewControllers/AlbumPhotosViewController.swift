@@ -40,13 +40,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
     }
     
     private func addEmptyDataSet() {
-        
-         if (viewModel.numberOfRows() == 0) {
             collectionView.setEmptyMessage(message: NoPhotosInAlbum.message, title: NoPhotosInAlbum.title, imageName: NoPhotosInAlbum.image, animate: true)
-         }else {
-            collectionView.restore()
-        }
-
     }
     
     func reload(at indexPath: IndexPath) {
@@ -66,7 +60,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
             addRightBarButton(title: "Done")
         }
        
-          //  addEmptyDataSet()
+            addEmptyDataSet()
         
     }
     
@@ -77,7 +71,6 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
 
 extension AlbumPhotosViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        addEmptyDataSet()
         return viewModel.numberOfRows()
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 extension UICollectionView{
     func scrollToLastItem(position: UICollectionView.ScrollPosition = .centeredHorizontally,animated: Bool = false) {
         let lastSection =  self.numberOfSections-1
@@ -28,12 +29,18 @@ protocol EmptyMessageViewType {
 protocol ListViewType: EmptyMessageViewType where Self: UIView {
     var backgroundView: UIView? { get set }
 }
-
+extension UICollectionView : EmptyDataSetSource {}
 extension UITableView: ListViewType {}
 extension UICollectionView: ListViewType {}
-
+public protocol EmptyDataSetSource {
+}
 extension ListViewType {
     func setEmptyMessage( message: String , title : String , imageName : String , animate : Bool) {
+        
+        if let collectionView = self as? UICollectionView {
+            collectionView.emptyDataSetSource = self as? EmptyDataSetSource
+            
+        }
         
         backgroundView = UIView(frame: UIScreen.main.bounds)
         
@@ -69,10 +76,10 @@ extension ListViewType {
 
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.text = message
-        messageLabel.textColor = .lightGray
+        messageLabel.textColor = .gray
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        messageLabel.font = UIFont.boldSystemFont(ofSize: 18)
        
         messageLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor).isActive = true
         messageLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width ).isActive = true
