@@ -33,6 +33,7 @@
 		486D587022F84CA700D49D45 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */; };
 		486D587222F84D7F00D49D45 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D587122F84D7F00D49D45 /* General.swift */; };
 		E38D385522F96896007717DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D385422F96896007717DE /* Constants.swift */; };
+		E3BF5EF622F96F1E006B9EA3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		486D587122F84D7F00D49D45 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		E38D385422F96896007717DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		486D584C22F84AA000D49D45 /* PhotosPicker */ = {
 			isa = PBXGroup;
 			children = (
+				E3BF5EF422F96F06006B9EA3 /* ProgressHud */,
 				4854A6A322F958800096CFB3 /* Assets */,
 				4854A6A022F9528D0096CFB3 /* Storyboard */,
 				486D586E22F84C9600D49D45 /* Extensions */,
@@ -181,6 +184,14 @@
 				E38D385422F96896007717DE /* Constants.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3BF5EF422F96F06006B9EA3 /* ProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */,
+			);
+			path = ProgressHud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				486D586122F84AA000D49D45 /* PhotosPickerCoordinator.swift in Sources */,
 				486D587222F84D7F00D49D45 /* General.swift in Sources */,
 				486D585E22F84AA000D49D45 /* AlbumCollectionViewCellViewModel.swift in Sources */,
+				E3BF5EF622F96F1E006B9EA3 /* ProgressHUD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

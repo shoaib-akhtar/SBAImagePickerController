@@ -56,8 +56,7 @@ class PhotosPickerCoordinator {
 extension PhotosPickerCoordinator {
     
     func errorOccured(with error: PhotosPickerErrorCode.error?) {
-        
-        
+
         photoAlbumsController?.showError(title: PhotoPermissionAlert.title, message: PhotoPermissionAlert.message, actionTitle: PhotoPermissionAlert.actionButtonTitle, completion: { (type) in
             if type == .action {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
