@@ -16,7 +16,8 @@ class AlbumPhotoCollectionViewCell: UICollectionViewCell, DequeueInitializable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        selectedImageView.layer.cornerRadius = 3
+        selectedImageView.layer.masksToBounds = true
     }
     
     func config () {

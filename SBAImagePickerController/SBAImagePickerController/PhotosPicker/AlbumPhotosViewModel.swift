@@ -28,14 +28,18 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     fileprivate var assets: PHFetchResult<AnyObject>?
     
     private var pickerController: PhotosPickerController? = PhotosPickerController()
+    
     fileprivate var viewModels: [Any] = []
     
     fileprivate var selectedAssets: SelectedAssets = SelectedAssets()
     
-    init(coordinator: PhotosPickerCoordinator, collection: PHAssetCollection, completion: @escaping cameraClosure) {
+    fileprivate let maximumImages : Int
+    
+    init(coordinator: PhotosPickerCoordinator, collection: PHAssetCollection,maximumImages: Int = 10, completion: @escaping cameraClosure) {
         self.coordinator = coordinator
         self.collection = collection
         self.completion = completion
+        self.maximumImages = maximumImages
     }
     
     func generateViewModels() {
@@ -99,7 +103,7 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
         let asset = assets![indexPath.row] as! PHAsset
         let contains = selectedAssets.assets.contains(where: {$0.localIdentifier == asset.localIdentifier})
         
-        if selectedAssets.assets.count < 3 {
+        if selectedAssets.assets.count < maximumImages {
             if !contains {
                 selectedAssets.assets.append(asset)
             } else {

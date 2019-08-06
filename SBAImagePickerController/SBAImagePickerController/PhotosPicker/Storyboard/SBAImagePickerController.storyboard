@@ -131,7 +131,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfn-Yj-XIH">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msListingSelectedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="aJR-el-NWZ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="aJR-el-NWZ">
                                                     <rect key="frame" x="75" y="75" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="aJR-el-NWZ" secondAttribute="height" multiplier="1:1" id="I4n-zA-tnw"/>
@@ -179,6 +179,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="msListingSelectedIcon" width="22" height="22"/>
+        <image name="tick.png" width="21.600000381469727" height="21.600000381469727"/>
     </resources>
 </document>

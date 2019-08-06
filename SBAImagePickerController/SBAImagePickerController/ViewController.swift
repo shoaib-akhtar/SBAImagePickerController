@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func open(_ sender: Any) {
-        let coordinator = PhotosPickerCoordinator.init(rootViewCOntroler: self) { (image, cancel) in
-            print(image?.count)
+        let coordinator = MultiplePhotosPickerCoordinator.init(rootViewCOntroler: self,maximumImages: 5) { (image, cancel) in
+            print(image?.count ?? 0)
         }
         coordinator.start()
     }

@@ -14,10 +14,11 @@ class PhotosPickerCoordinator {
     var photoAlbumsController: PhotoAlbumsViewController?
     var albumPhotosCollectionViewController: AlbumPhotosViewController?
     var completionBlock: cameraClosure
-    
-    init(rootViewCOntroler: UIViewController, completionBlock: @escaping cameraClosure) {
+    fileprivate let maximumImages: Int
+    init(rootViewCOntroler: UIViewController,maximumImages: Int = 10, completionBlock: @escaping cameraClosure) {
         self.rootViewController = rootViewCOntroler
         self.completionBlock = completionBlock
+        self.maximumImages = maximumImages
     }
     
     func start() {
@@ -73,6 +74,6 @@ extension PhotosPickerCoordinator {
 
 class MultiplePhotosPickerCoordinator: PhotosPickerCoordinator {
     override func loadAlbumPictures(for collection: PHAssetCollection) {
-        load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection, completion: completionBlock))
+        load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection,maximumImages: maximumImages, completion: completionBlock))
     }
 }
