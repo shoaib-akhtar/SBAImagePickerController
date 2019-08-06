@@ -39,14 +39,17 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
         }
     }
     
-//    private func addEmptyDataSet() {
+    private func addEmptyDataSet() {
+        
+        collectionView.setEmptyMessage(NoPhotosInAlbum.title)
+        
 //        collectionView.emptyDataSetView { view in
 //            view.titleLabelString(NSAttributedString.init(string: "txt_empty_album".localized()))
 //            .detailLabelString(NSAttributedString.init(string: "txt_empty_album_message".localized()))
 //        }
 //
 //        collectionView.reloadEmptyDataSet()
-//    }
+    }
     
     func reload(at indexPath: IndexPath) {
         collectionView.reloadItems(at: [indexPath])
@@ -64,7 +67,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
         if viewModel.showDone() {
             addRightBarButton(title: "Done")
         }
-//        addEmptyDataSet()
+        addEmptyDataSet()
     }
     
     override func rightBarButtonAction() {

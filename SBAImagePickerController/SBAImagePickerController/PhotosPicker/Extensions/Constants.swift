@@ -12,3 +12,6 @@ struct PhotoPermissionAlert {
     static let message = "Please grant photo permissions in Settings"
     static let actionButtonTitle = "Settings"
 }
+struct NoPhotosInAlbum {
+    static let title = "There are no photos exists in this album"
+}
