@@ -40,9 +40,13 @@ extension PhotosPickerCoordinator {
     
     func errorOccured(with error: PhotosPickerErrorCode.error?) {
         
-//        photoAlbumsController?.showAlert(title: "No Photo Permissions", message: "Please grant photo permissions in Settings", cancelTitle: "Cancel", actions: ["Settings"], actionBlock: { (index) in
-//            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-//        })
+        photoAlbumsController?.showError(title: PhotoPermissionAlert.title, message: PhotoPermissionAlert.message, actionTitle: PhotoPermissionAlert.actionButtonTitle, completion: { (type) in
+            if type == .action {
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            }
+            
+        })
+        
     }
     
     private func start() -> UIViewController{

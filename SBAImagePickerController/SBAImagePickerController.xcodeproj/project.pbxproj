@@ -31,7 +31,9 @@
 		486D586B22F84B2400D49D45 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D586922F84B2400D49D45 /* StoryboardInitializable.swift */; };
 		486D586D22F84B8500D49D45 /* DequeueInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D586C22F84B8500D49D45 /* DequeueInitializable.swift */; };
 		486D587022F84CA700D49D45 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */; };
-		486D587222F84D7F00D49D45 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D587122F84D7F00D49D45 /* UICollectionView+Extensions.swift */; };
+		E38D385522F96896007717DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D385422F96896007717DE /* Constants.swift */; };
+		E3BF5EF622F96F1E006B9EA3 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */; };
+		E3BF5EF822F98387006B9EA3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF5EF722F98387006B9EA3 /* UICollectionView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +63,9 @@
 		486D586922F84B2400D49D45 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		486D586C22F84B8500D49D45 /* DequeueInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DequeueInitializable.swift; sourceTree = "<group>"; };
 		486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		486D587122F84D7F00D49D45 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		E38D385422F96896007717DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		E3BF5EF722F98387006B9EA3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 			children = (
 				486D585422F84AA000D49D45 /* PhotosPickerCoordinator.swift */,
 				4854A6A822F9682E0096CFB3 /* ViewControllers */,
+				E3BF5EF422F96F06006B9EA3 /* ProgressHud */,
 				4854A6A322F958800096CFB3 /* Assets */,
 				4854A6A022F9528D0096CFB3 /* Storyboard */,
 				486D586E22F84C9600D49D45 /* Extensions */,
@@ -182,10 +187,19 @@
 		486D586E22F84C9600D49D45 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E3BF5EF722F98387006B9EA3 /* UICollectionView+Extensions.swift */,
 				486D586F22F84CA700D49D45 /* UIViewController+Extensions.swift */,
-				486D587122F84D7F00D49D45 /* UICollectionView+Extensions.swift */,
+				E38D385422F96896007717DE /* Constants.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3BF5EF422F96F06006B9EA3 /* ProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				E3BF5EF522F96F1E006B9EA3 /* ProgressHUD.swift */,
+			);
+			path = ProgressHud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,11 +290,13 @@
 				486D586222F84AA000D49D45 /* PhotosPickerViewModel.swift in Sources */,
 				486D585B22F84AA000D49D45 /* AlbumPhotosViewModel.swift in Sources */,
 				486D585D22F84AA000D49D45 /* AlbumPhotoCollectionViewCellViewModel.swift in Sources */,
+				E3BF5EF822F98387006B9EA3 /* UICollectionView+Extensions.swift in Sources */,
 				486D585C22F84AA000D49D45 /* AlbumPhotosViewController.swift in Sources */,
+				E38D385522F96896007717DE /* Constants.swift in Sources */,
 				486D586022F84AA000D49D45 /* PhotosPickerController.swift in Sources */,
 				486D586122F84AA000D49D45 /* PhotosPickerCoordinator.swift in Sources */,
-				486D587222F84D7F00D49D45 /* UICollectionView+Extensions.swift in Sources */,
 				486D585E22F84AA000D49D45 /* AlbumCollectionViewCellViewModel.swift in Sources */,
+				E3BF5EF622F96F1E006B9EA3 /* ProgressHUD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

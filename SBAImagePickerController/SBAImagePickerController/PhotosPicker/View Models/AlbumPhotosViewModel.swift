@@ -25,7 +25,8 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     private var collection: PHAssetCollection
     private var completion: cameraClosure
     fileprivate var assets: PHFetchResult<AnyObject>?
-    
+    private lazy var progressHud = ProgressHUD(text: progressText)
+    private let progressText : String = "loading"
     private var pickerController: PhotosPickerController? = PhotosPickerController()
     
     fileprivate var viewModels: [Any] = []
@@ -86,10 +87,10 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     }
     
     func done() {
-//        coordinator.showProgressHud()
+        progressHud.show()
         PhotoManager.loadImages(for: selectedAssets.assets) { [weak self](images) in
             guard let strongSelf = self else {return}
-//            strongSelf.coordinator.hideProgressHud()
+            strongSelf.progressHud.hide()
             strongSelf.coordinator.dismiss()
             strongSelf.completion(images, false)
         }
