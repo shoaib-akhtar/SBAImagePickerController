@@ -16,6 +16,11 @@ class AlbumCollectionViewCell: UICollectionViewCell,DequeueInitializable {
     
     var viewModel: AlbumCollectionViewCellViewModel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        thumnailImageView.layer.cornerRadius = 5
+        thumnailImageView.layer.masksToBounds = true
+    }
     
     func config() {
         titleLabel.text = viewModel.title()

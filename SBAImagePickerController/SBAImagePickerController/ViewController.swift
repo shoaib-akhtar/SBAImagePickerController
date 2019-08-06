@@ -15,11 +15,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func open(_ sender: Any) {
+    @IBAction func push(_ sender: Any) {
         let coordinator = MultiplePhotosPickerCoordinator.init(rootViewCOntroler: self,maximumImages: 5) { (image, cancel) in
             print(image?.count ?? 0)
         }
-        coordinator.start()
+        coordinator.push()
+    }
+    
+    @IBAction func present(_ sender: Any) {
+        let coordinator = MultiplePhotosPickerCoordinator.init(rootViewCOntroler: self,maximumImages: 5) { (image, cancel) in
+            print(image?.count ?? 0)
+        }
+        coordinator.present()
     }
     
 }

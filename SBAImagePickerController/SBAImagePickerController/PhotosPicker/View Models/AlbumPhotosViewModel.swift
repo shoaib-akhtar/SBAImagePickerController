@@ -9,7 +9,6 @@
 import Foundation
 import Photos
 
-typealias cameraClosure = (_ image: [UIImage]?,_ skiped: Bool) -> Void
 
 protocol AlbumPhotosViewModel {
     func loadImages()
@@ -127,7 +126,7 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
     
     override func title() -> String {
         let count = selectedAssets.assets.count
-        return (count == 0) ? "Select Pictures" : "\("Selected Pictures:") \(count)" + "/" + "\(50)"
+        return (count == 0) ? "Select Pictures" : "\("Selected Pictures:") \(count)" + "/" + "\(maximumImages)"
     }
     
     override func showDone() -> Bool {

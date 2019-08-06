@@ -29,7 +29,9 @@ class PhotoAlbumsViewController: BaseViewController, StoryboardInitializable {
     }
     
     private func configure() {
-        addRightBarButton(title: "Cancel")
+        if isModal{
+            addRightBarButton(title: "Cancel")
+        }
     }
     
     private func render() {
@@ -39,6 +41,8 @@ class PhotoAlbumsViewController: BaseViewController, StoryboardInitializable {
     override func rightBarButtonAction() {
         viewModel.cancel()
     }
+    
+    
 }
 
 extension PhotoAlbumsViewController {

@@ -1,5 +1,5 @@
 //
-//  General.swift
+//  UICollectionView+Extensions.swift
 //  SBAImagePickerController
 //
 //  Created by Shoaib Akhtar on 05/08/2019.
@@ -19,13 +19,4 @@ extension UICollectionView{
             
         }
     }
-    
-    func scrollToTopItem(position: UICollectionView.ScrollPosition = .top,animated: Bool = false) {
-        if self.numberOfSections >= 1 {
-            let indexPath = IndexPath(item: 0, section: 0)
-            self.scrollToItem(at: indexPath, at: position, animated: animated)
-        }
-    }
-    
-    
 }
