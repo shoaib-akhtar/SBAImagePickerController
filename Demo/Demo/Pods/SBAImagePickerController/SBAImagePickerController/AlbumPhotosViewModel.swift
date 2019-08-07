@@ -131,6 +131,6 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
     }
     
     override func showDone() -> Bool {
-        return true
+        return selectedAssets.assets.count > 0
     }
 }
