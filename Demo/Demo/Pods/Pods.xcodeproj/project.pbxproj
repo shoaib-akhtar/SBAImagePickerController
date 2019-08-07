@@ -30,7 +30,7 @@
 		67FED71DBE734EF172CFDF0FC02EB0AC /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC0B6886FC27E9B0BED9829A43F1D61 /* Pods-Demo-dummy.m */; };
 		6B562485119A5AC7554845EE85330730 /* DequeueInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83590E5FE1C5773428CAA23D0104E14 /* DequeueInitializable.swift */; };
 		73DE11E3B17B08BDD110DCE01C033A72 /* SBAImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E939106B9C879BAD140A89FD554B689F /* SBAImagePickerController.bundle */; };
-		7C74B6D1E7A8A4E7510FD9B45755377D /* PhotosPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ACD141C66BD294019D1A4C67F2B053 /* PhotosPickerCoordinator.swift */; };
+		7C74B6D1E7A8A4E7510FD9B45755377D /* SBAImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ACD141C66BD294019D1A4C67F2B053 /* SBAImagePickerController.swift */; };
 		7F1C4D86D1D1E2929D1B28646330DBF5 /* AlbumPhotoCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E1034B12882AD4A2CACDE1E7098BC4 /* AlbumPhotoCollectionViewCellViewModel.swift */; };
 		93108549C7DAEB0328D5314BFC70A79E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211087541048C33F0FE1BE63F3DD3ED /* BaseViewController.swift */; };
 		962DA6412C35A43E13AE87989F1DCA35 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A762C14B93C73F3284022ACAE0D7CC /* UIViewController+Extensions.swift */; };
@@ -73,7 +73,7 @@
 		2464E3D2649739E555ADAE3258585A96 /* AlbumPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumPhotoCollectionViewCell.swift; path = SBAImagePickerController/AlbumPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		24E1034B12882AD4A2CACDE1E7098BC4 /* AlbumPhotoCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumPhotoCollectionViewCellViewModel.swift; path = SBAImagePickerController/AlbumPhotoCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		25420425E6522C18FE468DA1A4B90F50 /* ProgressHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = SBAImagePickerController/ProgressHUD.swift; sourceTree = "<group>"; };
-		25ACD141C66BD294019D1A4C67F2B053 /* PhotosPickerCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotosPickerCoordinator.swift; path = SBAImagePickerController/PhotosPickerCoordinator.swift; sourceTree = "<group>"; };
+		25ACD141C66BD294019D1A4C67F2B053 /* SBAImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SBAImagePickerController.swift; path = SBAImagePickerController/SBAImagePickerController.swift; sourceTree = "<group>"; };
 		2635E13B6B9FA8BFEFD3488A420B0AC1 /* SBAImagePickerController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SBAImagePickerController-Info.plist"; sourceTree = "<group>"; };
 		286FB7ED904A7A0E1C9B3D6791672A8D /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -229,7 +229,7 @@
 				504DB748DA22E88613A76447477CC3DE /* PhotoAlbumsViewController.swift */,
 				002F4C7316929263EE6FD7D2E4DCB2EA /* PhotoManager.swift */,
 				60F2F9EF8AAFDB42B4474C2E90FB109B /* PhotosPickerController.swift */,
-				25ACD141C66BD294019D1A4C67F2B053 /* PhotosPickerCoordinator.swift */,
+				25ACD141C66BD294019D1A4C67F2B053 /* SBAImagePickerController.swift */,
 				EF7874ADF97F21547B2198D0A8B1E21D /* PhotosPickerViewModel.swift */,
 				25420425E6522C18FE468DA1A4B90F50 /* ProgressHUD.swift */,
 				0B39197B5E354EF38E9B0E8C9C4A3259 /* SelectedAssets.swift */,
@@ -447,7 +447,7 @@
 				34F7EC39F096FB99F4CB0132E74D769D /* PhotoAlbumsViewController.swift in Sources */,
 				0BAAF4B958086BF9824EEDE382A05498 /* PhotoManager.swift in Sources */,
 				FE3C4C1D96F80C081119930949519EC7 /* PhotosPickerController.swift in Sources */,
-				7C74B6D1E7A8A4E7510FD9B45755377D /* PhotosPickerCoordinator.swift in Sources */,
+				7C74B6D1E7A8A4E7510FD9B45755377D /* SBAImagePickerController.swift in Sources */,
 				4DCEB7C5AC5B7B201ED8B2F0CCF5BCD4 /* PhotosPickerViewModel.swift in Sources */,
 				5E4575C5AA31F6C90C5001C397F2599A /* ProgressHUD.swift in Sources */,
 				4854B18122FA9BB200BA34B6 /* UIImage+Extensions.swift in Sources */,

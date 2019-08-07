@@ -48,7 +48,7 @@ extension ListViewType {
         let imageView = UIImageView()
         backgroundView?.addSubview(imageView)
         
-        imageView.image = UIImage(named: imageName)
+        imageView.image = UIImage.bundleImage(named: imageName)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.tag = 2

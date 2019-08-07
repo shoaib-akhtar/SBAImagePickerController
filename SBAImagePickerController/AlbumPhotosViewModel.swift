@@ -21,7 +21,7 @@ protocol AlbumPhotosViewModel {
 }
 
 class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
-    fileprivate var coordinator: PhotosPickerCoordinator
+    fileprivate var coordinator: SBAImagePickerController
     private var collection: PHAssetCollection
     private var completion: cameraClosure
     fileprivate var assets: PHFetchResult<AnyObject>?
@@ -35,7 +35,7 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     
     fileprivate let maximumImages : Int
     
-    init(coordinator: PhotosPickerCoordinator, collection: PHAssetCollection,maximumImages: Int = 10, completion: @escaping cameraClosure) {
+    init(coordinator: SBAImagePickerController, collection: PHAssetCollection,maximumImages: Int = 10, completion: @escaping cameraClosure) {
         self.coordinator = coordinator
         self.collection = collection
         self.completion = completion
@@ -131,6 +131,6 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
     }
     
     override func showDone() -> Bool {
-        return true
+        return selectedAssets.assets.count > 0
     }
 }

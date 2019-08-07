@@ -11,7 +11,7 @@ import Photos
 
 public typealias cameraClosure = (_ images: [UIImage]?,_ skiped: Bool) -> Void
 
-public class PhotosPickerCoordinator {
+public class SBAImagePickerController {
     fileprivate let rootViewController: UIViewController
     fileprivate var photoAlbumsController: PhotoAlbumsViewController?
     fileprivate var albumPhotosCollectionViewController: AlbumPhotosViewController?
@@ -36,7 +36,7 @@ public class PhotosPickerCoordinator {
     }
 }
 
-extension PhotosPickerCoordinator {
+extension SBAImagePickerController {
     
     func errorOccured(with error: PhotosPickerErrorCode.error?) {
         
@@ -80,7 +80,7 @@ extension PhotosPickerCoordinator {
     }
 }
 
-extension PhotosPickerCoordinator {
+extension SBAImagePickerController {
     
     func dismiss() {
         DispatchQueue.main.async {
@@ -93,7 +93,7 @@ extension PhotosPickerCoordinator {
     }
 }
 
-public class MultiplePhotosPickerCoordinator: PhotosPickerCoordinator {
+public class SBAMultipleImagePickerController: SBAImagePickerController {
     override func loadAlbumPictures(for collection: PHAssetCollection) {
         load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection,maximumImages: maximumImages, completion: completionBlock))
     }
