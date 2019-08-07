@@ -36,7 +36,9 @@ class AlbumCollectionViewCellViewModelImp: AlbumCollectionViewCellViewModel {
             fetchOptions.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [videoPredicate,imagePredicate])
             assetCount = PHAsset.fetchAssets(in: collection, options: fetchOptions).count
         }
-        return  String(assetCount)
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal        
+        return  numberFormatter.string(from: NSNumber(value:assetCount)) ?? ""
     }
     
     func fetchFirstImageThumbnail(completionBlock: @escaping PhotosPickerControllerPicturesBlock) {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import EmptyDataSet_Swift
 
 struct CollectionConstraints {
     static let numberOfItems: Int = 3
@@ -59,9 +58,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
         if viewModel.showDone() {
             addRightBarButton(title: "Done")
         }
-       
             addEmptyDataSet()
-        
     }
     
     override func rightBarButtonAction() {
