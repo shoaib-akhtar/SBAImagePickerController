@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SBAImagePickerController:
-    :commit: c74180f3f2fa97233736c85a258722d1dd4fcfc0
+    :commit: e34f912525feaa25696e025cfd40490ebc2109c6
     :git: https://github.com/shoaib-akhtar/SBAImagePickerController
 
 SPEC CHECKSUMS:
