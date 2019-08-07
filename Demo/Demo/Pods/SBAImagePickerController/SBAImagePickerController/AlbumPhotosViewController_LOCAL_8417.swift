@@ -52,14 +52,12 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
     
     private func render() {
         title = viewModel.title()
-        if viewModel.showDone() {
-            addRightBarButton(title: "Done")
-        } else {
-            removeRightBarButton()
-        }
     }
     
     private func configure() {
+        if viewModel.showDone() {
+            addRightBarButton(title: "Done")
+        }
             addEmptyDataSet()
     }
     

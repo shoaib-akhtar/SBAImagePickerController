@@ -22,6 +22,9 @@ extension UIViewController{
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: title, style: UIBarButtonItem.Style.plain, target: self, action: #selector(rightBarButtonAction))
         }
     }
+    func removeRightBarButton(){
+         self.navigationItem.rightBarButtonItem = nil
+    }
 
     @objc func rightBarButtonAction() {
         

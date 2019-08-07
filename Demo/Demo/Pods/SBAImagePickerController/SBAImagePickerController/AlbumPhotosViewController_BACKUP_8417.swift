@@ -57,9 +57,12 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
         } else {
             removeRightBarButton()
         }
+<<<<<<< HEAD
+=======
     }
     
     private func configure() {
+>>>>>>> c350dab3841ac75e78f82a567d0087ac8308e7cf
             addEmptyDataSet()
     }
     
