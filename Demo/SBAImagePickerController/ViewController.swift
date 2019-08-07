@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PhotosPickerCoordinator
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
