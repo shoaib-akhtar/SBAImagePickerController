@@ -10,20 +10,20 @@ import UIKit
 
 class AlbumPhotoCollectionViewCell: UICollectionViewCell, DequeueInitializable {
     @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var selectedImageView: UIImageView!
+    @IBOutlet weak var selectedView: UIView!
     
     var viewModel: AlbumPhotoCollectionViewCellViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectedImageView.layer.cornerRadius = 3
-        selectedImageView.layer.masksToBounds = true
+        selectedView.layer.cornerRadius = 3
+        selectedView.layer.masksToBounds = true
     }
     
     func config () {
         let width = UIScreen.main.bounds.width/CGFloat(CollectionConstraints.numberOfItems) - CollectionConstraints.itemSpacing
         let size = CGSize.init(width: width, height: width)
         PhotoManager.loadImage(for: viewModel.associatedAsset(), targetSize: size, contentMode: .aspectFill, in: imgView)
-        selectedImageView.isHidden = !viewModel.isImageSelected()
+        selectedView.isHidden = !viewModel.isImageSelected()
     }
 }

@@ -16,7 +16,7 @@ class WeakObjectContainer: NSObject {
     }
 }
 
-private var kEmptyDataSetSource =           "emptyDataSetSource"
+private var kEmptyDataSetSource = "emptyDataSetSource"
 
 extension UIScrollView {
     public var emptyDataSetSource:  EmptyDataSetSource? {
