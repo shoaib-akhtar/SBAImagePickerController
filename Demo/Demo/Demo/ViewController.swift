@@ -10,9 +10,17 @@ import UIKit
 import SBAImagePickerController
 class ViewController: UIViewController {
 
+    @IBOutlet weak var first: UIButton!
+    @IBOutlet weak var second: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        first.titleLabel?.isOpaque = true
+        first.titleLabel?.backgroundColor = .white
+        
+        second.titleLabel?.isOpaque = true
+        second.titleLabel?.backgroundColor = .white
     }
 
     @IBAction func push(_ sender: Any) {
@@ -30,4 +38,5 @@ class ViewController: UIViewController {
     }
     
 }
+
 
