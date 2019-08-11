@@ -143,7 +143,7 @@ extension AlbumPhotosViewController {
     func cellDeselect(at indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
                 viewModel.rowSelected(at: indexPath)
-                render()//
+                render()////
     }
     
    
