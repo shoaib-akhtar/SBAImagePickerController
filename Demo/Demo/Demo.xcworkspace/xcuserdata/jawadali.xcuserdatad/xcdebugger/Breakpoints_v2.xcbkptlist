@@ -9,14 +9,26 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/SBAImagePickerController/SBAImagePickerController/AlbumPhotosViewController.swift"
-            timestampString = "586851421.2467999"
+            filePath = "Pods/SBAImagePickerController/SBASwipeGestureRecognizer.swift"
+            timestampString = "587207288.7453769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "render()"
-            landmarkType = "7">
+            startingLineNumber = "219"
+            endingLineNumber = "219">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBASwipeGestureRecognizer.swift"
+            timestampString = "587207288.745544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
