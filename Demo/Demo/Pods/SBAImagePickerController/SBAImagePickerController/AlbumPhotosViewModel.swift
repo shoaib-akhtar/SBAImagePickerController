@@ -18,6 +18,7 @@ protocol AlbumPhotosViewModel {
     func title() -> String
     func showDone() -> Bool
     func done()
+    func maximumAllowed() -> Int
 }
 
 class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
@@ -55,7 +56,9 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
             coordinator.reloadCollection()
         }
     }
-    
+    func maximumAllowed() -> Int {
+        return maximumImages
+    }
     func loadImages() {
         pickerController?.fetchPhotos(in: collection, completionBlock: {[weak self] (assets) in
             guard let strongSelf = self else {return}
@@ -109,16 +112,18 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
             } else {
                 selectedAssets.assets.removeAll(where: {$0.localIdentifier == asset.localIdentifier})
             }
-            reloadWith(asset: asset, at: indexPath, showSelected: contains)
+          //  reloadWith(asset: asset, at: indexPath, showSelected: contains)
             
         } else {
             if contains {
                 selectedAssets.assets.removeAll(where: {$0.localIdentifier == asset.localIdentifier})
-                reloadWith(asset: asset, at: indexPath, showSelected: contains)
+              //  reloadWith(asset: asset, at: indexPath, showSelected: contains)
             }
         }
     }
-    
+   override func maximumAllowed()  -> Int {
+    return maximumImages
+    }
     private func reloadWith(asset: PHAsset, at indexPath: IndexPath, showSelected: Bool) {
         let vm = AlbumPhotoCollectionViewCellViewModelImp(asset: asset, selected: !showSelected)
         viewModels[indexPath.row] = vm

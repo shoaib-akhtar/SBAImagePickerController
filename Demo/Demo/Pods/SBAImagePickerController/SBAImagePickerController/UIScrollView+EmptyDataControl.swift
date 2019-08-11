@@ -88,7 +88,7 @@ extension UIScrollView {
             }
         }
     }
-    internal var itemsCount: Int {
+  @objc var itemsCount: Int {
         var items = 0
         
         // UITableView support
