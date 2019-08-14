@@ -112,12 +112,10 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
             } else {
                 selectedAssets.assets.removeAll(where: {$0.localIdentifier == asset.localIdentifier})
             }
-          //  reloadWith(asset: asset, at: indexPath, showSelected: contains)
             
         } else {
             if contains {
                 selectedAssets.assets.removeAll(where: {$0.localIdentifier == asset.localIdentifier})
-              //  reloadWith(asset: asset, at: indexPath, showSelected: contains)
             }
         }
     }
