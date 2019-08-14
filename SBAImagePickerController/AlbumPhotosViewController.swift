@@ -23,8 +23,17 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
     var viewModel: AlbumPhotosViewModel!
     var scrolledToBottom = false
     
+    private lazy var batchSelector: SBASwipeSelection = {
+        self.collectionView.allowsMultipleSelection = true
+        return SBASwipeSelection(viewController: self, collectionView: self.collectionView )
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        batchSelector.enable()
+       
         render()
         configure()
         viewModel.loadImages()
@@ -53,15 +62,15 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
     
     private func render() {
         title = viewModel.title()
+        if viewModel.showDone() {
+            addRightBarButton(title: "Done")
+        } else {
+            removeRightBarButton()
+        }
     }
     
     private func configure() {
-        if viewModel.showDone() {
-            addRightBarButton(title: "Done")
-        }
-       
             addEmptyDataSet()
-        
     }
     
     override func rightBarButtonAction() {
@@ -98,4 +107,44 @@ extension AlbumPhotosViewController: UICollectionViewDataSource, UICollectionVie
         viewModel.rowSelected(at: indexPath)
         render()
     }
+    func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        
+        print("called shouldDeselectItemAt" )
+        return true
+    }
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+         print("called shouldSelectItemAt" )
+        
+        if let indexPath = self.collectionView.indexPathsForSelectedItems , indexPath.count >= viewModel.maximumAllowed(){
+            return false
+        }
+    
+        
+        return true
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath){
+        print("de select")
+        viewModel.rowSelected(at: indexPath)
+        render()
+    }
+   
+}
+
+extension AlbumPhotosViewController {
+    func cellSelect(at indexPath: IndexPath) {
+        if collectionView.indexPathsForSelectedItems!.count < viewModel.maximumAllowed() {
+        
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition.init())
+                viewModel.rowSelected(at: indexPath)
+                render()
+        }
+    }
+    
+    func cellDeselect(at indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+                viewModel.rowSelected(at: indexPath)
+                render()////
+    }
+    
+   
 }
