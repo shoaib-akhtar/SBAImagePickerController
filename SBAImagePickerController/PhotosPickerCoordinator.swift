@@ -95,6 +95,6 @@ extension PhotosPickerCoordinator {
 
 public class MultiplePhotosPickerCoordinator: PhotosPickerCoordinator {
     override func loadAlbumPictures(for collection: PHAssetCollection) {
-        load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection,maximumImages: maximumImages, completion: completionBlock))
+        load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection,maximumImages: maximumImages, completion: completionBlock))//
     }
 }
