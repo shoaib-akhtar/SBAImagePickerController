@@ -13,7 +13,15 @@ class AlbumPhotoCollectionViewCell: UICollectionViewCell, DequeueInitializable {
     @IBOutlet weak var selectedImageView: UIImageView!
     
     var viewModel: AlbumPhotoCollectionViewCellViewModel!
-    
+    override var isSelected: Bool {
+        get {
+            return super.isSelected
+        }
+        set {
+            super.isSelected = newValue
+            selectedImageView.isHidden = !newValue
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         selectedImageView.layer.cornerRadius = 3
