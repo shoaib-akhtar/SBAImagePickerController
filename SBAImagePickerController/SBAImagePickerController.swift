@@ -10,6 +10,7 @@ import UIKit
 import Photos
 
 public typealias cameraClosure = (_ images: [UIImage]?,_ skiped: Bool) -> Void
+public typealias translationsClosure = (_ key: String) -> String
 
 public class SBAImagePickerController {
     fileprivate let rootViewController: UIViewController
@@ -24,6 +25,9 @@ public class SBAImagePickerController {
     }
     public func push() {
         rootViewController.show(start(), sender: nil)
+    }
+    public func translate (closure: @escaping translationsClosure){
+        Transaltions.shared.closure = closure
     }
     
     public func present() {
@@ -96,5 +100,20 @@ extension SBAImagePickerController {
 public class SBAMultipleImagePickerController: SBAImagePickerController {
     override func loadAlbumPictures(for collection: PHAssetCollection) {
         load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection,maximumImages: maximumImages, completion: completionBlock))
+    }
+}
+
+class Transaltions{
+    static let shared = Transaltions()
+    var closure : translationsClosure?
+    private init() {
+        
+    }
+    
+    func translation(for key: String) -> String {
+        if let closure = closure{
+           return closure(key)
+        }
+        return key
     }
 }

@@ -30,12 +30,12 @@ class PhotoAlbumsViewController: BaseViewController, StoryboardInitializable {
     
     private func configure() {
         if isModal{
-            addRightBarButton(title: "Cancel")
+            addRightBarButton(title: Transaltions.shared.translation(for: "Cancel"))
         }
     }
     
     private func render() {
-        title = "Albums"
+        title = Transaltions.shared.translation(for: "Albums")
     }
     
     override func rightBarButtonAction() {

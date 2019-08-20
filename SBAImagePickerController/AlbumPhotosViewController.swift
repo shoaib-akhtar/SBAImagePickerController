@@ -62,7 +62,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
     private func render() {
         title = viewModel.title()
         if viewModel.showDone() {
-            addRightBarButton(title: "Done")
+            addRightBarButton(title: Transaltions.shared.translation(for: "Done"))
         } else {
             removeRightBarButton()
         }

@@ -31,7 +31,7 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     private var completion: cameraClosure
     fileprivate var assets: PHFetchResult<AnyObject>?
     private lazy var progressHud = ProgressHUD(text: progressText)
-    private let progressText : String = "loading"
+    private let progressText : String = Transaltions.shared.translation(for: "loading")
     private var pickerController: PhotosPickerController? = PhotosPickerController()
     private var requestIdMap = [IndexPath: PHImageRequestID]()
     fileprivate var viewModels: [Any] = []
@@ -156,7 +156,9 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
     
     override func title() -> String {
         let count = selectedAssets.assets.count
-        return (count == 0) ? "Select Pictures" : "\("Selected Pictures:") \(count)" + "/" + "\(maximumImages)"
+//        return (count == 0) ? "Select Pictures" : "\("Selected Pictures:") \(count)" + "/" + "\(maximumImages)"
+        return (count == 0) ? Transaltions.shared.translation(for: "Select Pictures") : "\(Transaltions.shared.translation(for: "Selected Pictures:")) \(count)" + "/" + "\(maximumImages)"
+
     }
     
     override func showDone() -> Bool {
