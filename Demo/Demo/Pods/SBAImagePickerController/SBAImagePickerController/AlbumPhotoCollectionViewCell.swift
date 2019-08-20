@@ -29,9 +29,6 @@ class AlbumPhotoCollectionViewCell: UICollectionViewCell, DequeueInitializable {
     }
     
     func config () {
-//        let width = UIScreen.main.bounds.width/CGFloat(CollectionConstraints.numberOfItems) - CollectionConstraints.itemSpacing
-//        let size = CGSize.init(width: width, height: width)
-//        PhotoManager.loadImage(for: viewModel.associatedAsset(), targetSize: size, contentMode: .aspectFill, in: imgView)
-       // selectedImageView.isHidden = !viewModel.isImageSelected()
+
     }
 }

@@ -13,14 +13,19 @@ class PhotoManager: PHImageManager {
     static let sharedManager = PhotoManager()
     let cacheManager = PHCachingImageManager()
     
-    static func loadImage(for asset: PHAsset, targetSize: CGSize, contentMode: PHImageContentMode, in view: UIImageView) {
+    static func loadImage(for asset: PHAsset, targetSize: CGSize, contentMode: PHImageContentMode, completion: @escaping ((UIImage?) -> Void)) -> PHImageRequestID {
         
-        PhotoManager.sharedManager.cacheManager .startCachingImages(for: [asset], targetSize: targetSize, contentMode: contentMode, options: nil)
-        PhotoManager.sharedManager.requestImage(for: asset,
+ //       PhotoManager.sharedManager.cacheManager .startCachingImages(for: [asset], targetSize: targetSize, contentMode: contentMode, options: nil)
+        let options = PHImageRequestOptions()
+        options.isNetworkAccessAllowed = true
+        options.deliveryMode = .highQualityFormat
+      return  PhotoManager.sharedManager.requestImage(for: asset,
                                                 targetSize: targetSize,
                                                 contentMode: contentMode,
-                                                options: nil) { (image, _) in
-                                                    view.image = image
+                                                options: options) { (image, _) in
+                                                    DispatchQueue.main.async {
+                                                        completion(image)
+                                                    }
         }
     }
     
