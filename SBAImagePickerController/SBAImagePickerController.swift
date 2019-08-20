@@ -6,6 +6,21 @@
 //  Copyright © 2019 QuantumCPH. All rights reserved.
 //
 
+/* Translate these keys in your parent app to translate SBAImagePickerController
+"Done"
+"Select Pictures"
+"Selected Pictures:"
+"Photos";
+"No Photo Permissions"
+"Please grant photo permissions in Settings"
+"Settings"
+"Whoops !!"
+"Sorry this album does not contain any photo. Please select other albums to select photos"
+"Cancel"
+"Albums"
+"loading"
+*/
+
 import UIKit
 import Photos
 

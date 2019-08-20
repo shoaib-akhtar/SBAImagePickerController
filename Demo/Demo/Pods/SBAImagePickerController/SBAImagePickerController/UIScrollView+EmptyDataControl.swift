@@ -16,7 +16,7 @@ class WeakObjectContainer: NSObject {
     }
 }
 
-private var kEmptyDataSetSource =           "emptyDataSetSource"
+private var kEmptyDataSetSource = "emptyDataSetSource"
 
 extension UIScrollView {
     public var emptyDataSetSource:  EmptyDataSetSource? {
@@ -88,7 +88,7 @@ extension UIScrollView {
             }
         }
     }
-  @objc var itemsCount: Int {
+    internal var itemsCount: Int {
         var items = 0
         
         // UITableView support

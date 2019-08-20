@@ -1,3 +1,22 @@
-PODFILE CHECKSUM: 15c2be8dad748c2b30675b0a059f37e13346070a
+PODS:
+  - SBAImagePickerController (1.0)
 
-COCOAPODS: 1.7.2
+DEPENDENCIES:
+  - SBAImagePickerController (from `https://github.com/shoaib-akhtar/SBAImagePickerController`, branch `master`)
+
+EXTERNAL SOURCES:
+  SBAImagePickerController:
+    :branch: master
+    :git: https://github.com/shoaib-akhtar/SBAImagePickerController
+
+CHECKOUT OPTIONS:
+  SBAImagePickerController:
+    :commit: 3896ab49651f27e34cb3a17d7bf624ae0b6357f6
+    :git: https://github.com/shoaib-akhtar/SBAImagePickerController
+
+SPEC CHECKSUMS:
+  SBAImagePickerController: 3d4fcd22170f3026a381009b209e3dbe190e9f16
+
+PODFILE CHECKSUM: 8ba383164860c9e9a6af6dee2362832847e4a1f2
+
+COCOAPODS: 1.7.5

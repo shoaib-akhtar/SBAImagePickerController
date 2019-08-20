@@ -27,12 +27,18 @@ class ViewController: UIViewController {
         let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) { (images, cancel) in
             print(images?.count ?? 0)
         }
+        coordinator.translate { (key) -> String in
+            return NSLocalizedString(key, comment: "")
+        }
         coordinator.push()
     }
     
     @IBAction func present(_ sender: Any) {
         let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) { (images, cancel) in
             print(images?.count ?? 0)
+        }
+        coordinator.translate { (key) -> String in
+            return NSLocalizedString(key, comment: "")
         }
         coordinator.present()
     }
