@@ -7,6 +7,10 @@ An easy multiple image picker controller for photo library.
 <a href="https://imgflip.com/gif/37ft7x"><img src="https://i.imgflip.com/37ft7x.gif" title="made at imgflip.com"/></a>
 </p>
 
+<p align="center">
+<a href="https://imgflip.com/gif/38fus8"><img src="https://i.imgflip.com/38fus8.gif" title="made at imgflip.com"/></a>
+</p>
+
 Installation
 ------------
 
@@ -33,6 +37,13 @@ Present SBAImagePickerController
         print(images?.count ?? 0)
     }
     coordinator.present()
+```
+
+Translate
+```swift
+    coordinator.translate { (key) -> String in
+         return NSLocalizedString(key, comment: "")
+    }
 ```
 Congratulations! You're done.
 
