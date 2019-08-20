@@ -4,8 +4,12 @@ All notable changes to this project will be documented in this file.
 
 #### 1.x Releases
 - `1.0` Releases - [1.0](#1)
+- `1.1` Releases - [1.1](#1)
 
-## [1.0.0](https://github.com/shoaib-akhtar/SBAImagePickerController/master/tag/1.0)
+## [1.1](https://github.com/shoaib-akhtar/SBAImagePickerController/master/tag/1.1)
+Released on 20-08-2019.
+
+## [1.0](https://github.com/shoaib-akhtar/SBAImagePickerController/master/tag/1.0)
 Released on 07-08-2019.
 
 #### Added
