@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 - `1.1` Releases - [1.1](#1)
 
 ## [1.1](https://github.com/shoaib-akhtar/SBAImagePickerController/master/tag/1.1)
+- Multiselect added
+- Translation support added
 Released on 20-08-2019.
 
 ## [1.0](https://github.com/shoaib-akhtar/SBAImagePickerController/master/tag/1.0)
