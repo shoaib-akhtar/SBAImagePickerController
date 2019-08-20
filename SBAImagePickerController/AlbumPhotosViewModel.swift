@@ -19,6 +19,10 @@ protocol AlbumPhotosViewModel {
     func showDone() -> Bool
     func done()
     func maximumAllowed() -> Int
+    func cancelFetching(at indexPath: IndexPath)
+    func registerFetching(requestId: PHImageRequestID, at indexPath: IndexPath)
+    func removeFetching(indexPath: IndexPath)
+    func isFetching(indexPath: IndexPath) -> Bool
 }
 
 class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
@@ -29,7 +33,7 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     private lazy var progressHud = ProgressHUD(text: progressText)
     private let progressText : String = "loading"
     private var pickerController: PhotosPickerController? = PhotosPickerController()
-    
+    private var requestIdMap = [IndexPath: PHImageRequestID]()
     fileprivate var viewModels: [Any] = []
     
     fileprivate var selectedAssets: SelectedAssets = SelectedAssets()
@@ -96,6 +100,28 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
             strongSelf.progressHud.hide()
             strongSelf.coordinator.dismiss()
             strongSelf.completion(images, false)
+        }
+    }
+    func cancelFetching(at indexPath: IndexPath) {
+        if let requestId = requestIdMap[indexPath] {
+            requestIdMap.removeValue(forKey: indexPath)
+            PhotoManager.sharedManager.cancelImageRequest(requestId)
+        }
+    }
+    
+    func registerFetching(requestId: PHImageRequestID, at indexPath: IndexPath) {
+        requestIdMap[indexPath] = requestId
+    }
+    func removeFetching(indexPath: IndexPath) {
+        if let _ = requestIdMap[indexPath] {
+            requestIdMap.removeValue(forKey: indexPath)
+        }
+    }
+    func isFetching(indexPath: IndexPath) -> Bool {
+        if let _ = requestIdMap[indexPath] {
+            return true
+        } else {
+            return false
         }
     }
 }
