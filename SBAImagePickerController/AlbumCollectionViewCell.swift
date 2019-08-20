@@ -30,7 +30,11 @@ class AlbumCollectionViewCell: UICollectionViewCell,DequeueInitializable {
             guard let strongself = self else {return}
             
             if let assets = asset, let viewAsset = assets.firstObject as? PHAsset {
-                PhotoManager.loadImage(for: viewAsset, targetSize: size, contentMode: .aspectFill, in: strongself.thumnailImageView)
+                let _ =    PhotoManager.loadImage(for: viewAsset, targetSize: size, contentMode: .aspectFill, completion: { [weak self] (image) in
+                    
+                    self?.thumnailImageView.image = image
+                    
+                })
             } else {
                 strongself.thumnailImageView.image = UIImage.bundleImage(named: "Placeholder")
             }
