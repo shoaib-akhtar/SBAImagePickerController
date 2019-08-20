@@ -86,10 +86,29 @@ extension AlbumPhotosViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = AlbumPhotoCollectionViewCell.dequeue(collectionView: collectionView, indexPath: indexPath)
         cell.viewModel = viewModel.viewModel(for: indexPath) as? AlbumPhotoCollectionViewCellViewModel
-        cell.config()
+       // cell.config()
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cell = cell as? AlbumPhotoCollectionViewCell {
+           // cell.config()
+            let width = UIScreen.main.bounds.width/CGFloat(CollectionConstraints.numberOfItems) - CollectionConstraints.itemSpacing
+            let size = CGSize.init(width: width*2, height: width*2)
+            let requestId =  PhotoManager.loadImage(for: cell.viewModel.associatedAsset(), targetSize: size, contentMode: .aspectFill, completion: { [weak self] (image) in
+                guard let self = self else { return}
+                if self.viewModel.isFetching(indexPath: indexPath) {
+                    self.viewModel.removeFetching(indexPath: indexPath)
+                }
+                cell.imgView.image = image
+                
+            })
+            viewModel.registerFetching(requestId: requestId, at: indexPath)
+        }
+    }
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        viewModel.cancelFetching(at: indexPath)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width/CGFloat(CollectionConstraints.numberOfItems) - CollectionConstraints.itemSpacing
         return CGSize(width: width, height: width)

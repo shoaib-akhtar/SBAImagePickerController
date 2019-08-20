@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func present(_ sender: Any) {
-        let coordinator = MultiplePhotosPickerCoordinator.init(rootViewCOntroler: self,maximumImages: 3) { (images, cancel) in
+        let coordinator = MultiplePhotosPickerCoordinator.init(rootViewCOntroler: self,maximumImages: 30) { (images, cancel) in
             print(images?.count ?? 0)
         }
         coordinator.present()
