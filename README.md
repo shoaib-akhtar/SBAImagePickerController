@@ -22,7 +22,8 @@ Usage
 Show SBAImagePickerController
 
 ```swift
-    let controller = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) { (images, cancel) in
+    let controller = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) {[weak self] (images, cancel) in
+        guard let _ = self else{return}
         print(images?.count ?? 0)
      }
      controller.push()
@@ -31,15 +32,17 @@ Show SBAImagePickerController
 Present SBAImagePickerController
 
 ```swift
-   let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) { (images, cancel) in
-        print(images?.count ?? 0)
+   let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) {[weak self] (images, cancel) in
+       guard let _ = self else{return}
+       print(images?.count ?? 0)
     }
     coordinator.present()
 ```
 
 Translate
 ```swift
-    coordinator.translate { (key) -> String in
+    coordinator.translate {[weak self] (key) -> String in
+         guard let _ = self else{return ""}
          return NSLocalizedString(key, comment: "")
     }
 ```
