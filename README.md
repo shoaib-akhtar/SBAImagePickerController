@@ -4,12 +4,10 @@ An easy multiple image picker controller for photo library.
 ![CocoaPods](https://cocoapod-badges.herokuapp.com/v/SBAImagePickerController/badge.png)
 
 <p align="center">
-<a href="https://imgflip.com/gif/37ft7x"><img src="https://i.imgflip.com/37ft7x.gif" title="made at imgflip.com"/></a>
-</p>
-
-<p align="center">
+<a href="https://imgflip.com/gif/37ft7x"><img src="https://i.imgflip.com/37ft7x.gif" title="made at imgflip.com"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://imgflip.com/gif/38fus8"><img src="https://i.imgflip.com/38fus8.gif" title="made at imgflip.com"/></a>
 </p>
+
 
 Installation
 ------------
