@@ -24,20 +24,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func push(_ sender: Any) {
-        let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) { (images, cancel) in
+        let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 5) {[weak self] (images, cancel) in
+            guard let _ = self else{return}
             print(images?.count ?? 0)
         }
-        coordinator.translate { (key) -> String in
+        coordinator.translate {[weak self] (key) -> String in
+            guard let _ = self else{return ""}
             return NSLocalizedString(key, comment: "")
         }
         coordinator.push()
     }
     
     @IBAction func present(_ sender: Any) {
-        let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 15) { (images, cancel) in
+        let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 15) {[weak self] (images, cancel) in
+            guard let _ = self else{return}
             print(images?.count ?? 0)
         }
-        coordinator.translate { (key) -> String in
+        coordinator.translate {[weak self]  (key) -> String in
+            guard let _ = self else{return ""}
             return NSLocalizedString(key, comment: "")
         }
         coordinator.present()
