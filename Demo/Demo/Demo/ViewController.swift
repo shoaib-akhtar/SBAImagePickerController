@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func present(_ sender: Any) {
-        let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 15) {[weak self] (images, cancel) in
+        let coordinator = SBAMultipleImagePickerController.init(rootViewCOntroler: self,maximumImages: 50) {[weak self] (images, cancel) in
             guard let _ = self else{return}
             print(images?.count ?? 0)
         }
