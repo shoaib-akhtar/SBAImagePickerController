@@ -79,6 +79,9 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
 
 extension AlbumPhotosViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if viewModel.numberOfRows() != 0{
+            collectionView.restore()
+        }
         return viewModel.numberOfRows()
     }
     
