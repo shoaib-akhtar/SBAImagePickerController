@@ -94,7 +94,7 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     }
     
     func done() {
-        progressHud.show()
+        progressHud.show(view: self.coordinator.view())
         PhotoManager.loadImages(for: selectedAssets.assets) { [weak self](images) in
             guard let strongSelf = self else {return}
             strongSelf.progressHud.hide()

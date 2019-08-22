@@ -53,6 +53,12 @@ public class SBAImagePickerController {
     func loadAlbumPictures(for collection: PHAssetCollection) {
         load(with: AlbumPhotosViewModelImp(coordinator: self, collection: collection, completion: completionBlock))
     }
+    func view() -> UIView {
+        if let vc = albumPhotosCollectionViewController{
+            return vc.view
+        }
+        return rootViewController.view
+    }
 }
 
 extension SBAImagePickerController {
