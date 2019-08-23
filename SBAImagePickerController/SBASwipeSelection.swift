@@ -5,7 +5,7 @@
 //  Created by Jawad Ali on 11/08/2019.
 //
 
-
+import UIKit
 class SBASwipeSelection: NSObject {
     
     private unowned let viewController: AlbumPhotosViewController

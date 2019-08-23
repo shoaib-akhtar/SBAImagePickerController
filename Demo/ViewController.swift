@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SBAImagePickerController
 class ViewController: UIViewController {
 
     @IBOutlet weak var first: UIButton!

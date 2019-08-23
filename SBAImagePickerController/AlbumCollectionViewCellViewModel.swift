@@ -42,7 +42,7 @@ class AlbumCollectionViewCellViewModelImp: AlbumCollectionViewCellViewModel {
     }
     
     func fetchFirstImageThumbnail(completionBlock: @escaping PhotosPickerControllerPicturesBlock) {
-        photoController.fetchPhotos(in: collection, fetchLimit: 1) { (asset) in
+        photoController.fetchPhotos(in: collection) { (asset) in
             completionBlock(asset)
         }
     }
