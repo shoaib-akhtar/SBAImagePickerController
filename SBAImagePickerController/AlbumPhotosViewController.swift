@@ -48,7 +48,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
     }
     
     private func addEmptyDataSet() {
-            collectionView.setEmptyMessage(message: NoPhotosInAlbum.message, title: NoPhotosInAlbum.title, imageName: NoPhotosInAlbum.image, animate: true)
+//            collectionView.setEmptyMessage(message: NoPhotosInAlbum.message, title: NoPhotosInAlbum.title, imageName: NoPhotosInAlbum.image, animate: true)
     }
     
     func reload(at indexPath: IndexPath) {
@@ -80,7 +80,7 @@ class AlbumPhotosViewController: BaseViewController, StoryboardInitializable {
 extension AlbumPhotosViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.numberOfRows() != 0{
-            collectionView.restore()
+//            collectionView.restore()
         }
         return viewModel.numberOfRows()
     }
