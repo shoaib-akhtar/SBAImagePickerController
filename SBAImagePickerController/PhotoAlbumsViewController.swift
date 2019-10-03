@@ -12,7 +12,9 @@ class PhotoAlbumsViewController: BaseViewController, StoryboardInitializable {
     static func storyboardName() -> String {
         return "SBAImagePickerController"
     }
-    
+    deinit {
+        print("Deinit")
+    }
     @IBOutlet weak var collectionView: UICollectionView!
 
     var viewModel: PhotosPickerViewModel!
