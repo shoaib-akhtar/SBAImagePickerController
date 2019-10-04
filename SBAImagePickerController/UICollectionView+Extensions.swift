@@ -29,16 +29,16 @@ protocol EmptyMessageViewType {
 protocol ListViewType: EmptyMessageViewType where Self: UIView {
     var backgroundView: UIView? { get set }
 }
-extension UICollectionView : EmptyDataSetSource {}
+extension UICollectionView : EmptySetDataSetSource {}
 extension UITableView: ListViewType {}
 extension UICollectionView: ListViewType {}
-public protocol EmptyDataSetSource {
+public protocol EmptySetDataSetSource {
 }
 extension ListViewType {
     func setEmptyMessage( message: String , title : String , imageName : String , animate : Bool) {
         
         if let collectionView = self as? UICollectionView {
-            collectionView.emptyDataSetSource = self as? EmptyDataSetSource
+            collectionView.emptyDataSetSource = self as? EmptySetDataSetSource
             
         }
         
@@ -48,7 +48,7 @@ extension ListViewType {
         let imageView = UIImageView()
         backgroundView?.addSubview(imageView)
         
-        imageView.image = UIImage(named: imageName)
+        imageView.image = UIImage.bundleImage(named: imageName)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.tag = 2

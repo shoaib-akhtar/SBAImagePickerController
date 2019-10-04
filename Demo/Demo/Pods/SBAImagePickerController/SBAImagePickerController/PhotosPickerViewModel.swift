@@ -18,14 +18,14 @@ protocol PhotosPickerViewModel {
 }
 
 class PhotosPickerViewModelImp: PhotosPickerViewModel {    
-    private var coordinator: PhotosPickerCoordinator
+    private var coordinator: SBAImagePickerController
     private var pickerController: PhotosPickerController?
     private var viewModels: [Any] = []
     
     private var userLibrary: PHFetchResult<PHAssetCollection>!
     private var userAlbums: PHFetchResult<PHCollection>!
     
-    init(coordinator: PhotosPickerCoordinator) {
+    init(coordinator: SBAImagePickerController) {
         self.coordinator = coordinator
         pickerController = PhotosPickerController()
     }

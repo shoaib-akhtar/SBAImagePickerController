@@ -30,7 +30,7 @@ class PhotoManager: PHImageManager {
     }
     
     static func loadImages(for assets: [PHAsset], completion: @escaping (_ images: [UIImage]) -> Void) {
-        let queue = DispatchQueue(label: "com.hidebox.loadImages", attributes: .concurrent)
+        let queue = DispatchQueue(label: "com.sbaimagepickercontroller.loadImages", attributes: .concurrent)
         let group = DispatchGroup()
         var images: [UIImage] = []
         let options = PHImageRequestOptions()

@@ -129,7 +129,7 @@
                                                 </imageView>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="aJR-el-NWZ">
                                                     <rect key="frame" x="75" y="75" width="20" height="20"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="aJR-el-NWZ" secondAttribute="height" multiplier="1:1" id="I4n-zA-tnw"/>
                                                         <constraint firstAttribute="height" constant="20" id="wYI-X2-462"/>

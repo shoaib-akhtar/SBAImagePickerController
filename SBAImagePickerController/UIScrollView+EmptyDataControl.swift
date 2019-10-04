@@ -16,37 +16,44 @@ class WeakObjectContainer: NSObject {
     }
 }
 
-private var kEmptyDataSetSource =           "emptyDataSetSource"
+ private var kEmptyDataSetSource = "emptyDataSetSourcePhoto"
 
 extension UIScrollView {
-    public var emptyDataSetSource:  EmptyDataSetSource? {
+    public var emptyDataSetSource:  EmptySetDataSetSource? {
         get {
             let container = objc_getAssociatedObject(self, &kEmptyDataSetSource) as? WeakObjectContainer
-            return container?.weakObject as? EmptyDataSetSource
+            return container?.weakObject as? EmptySetDataSetSource
         }
         set {
             
-            objc_setAssociatedObject(self, &kEmptyDataSetSource, WeakObjectContainer(with: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            UIScrollView.swizzleReloadData
+            objc_setAssociatedObject(self, &kEmptyDataSetSource, WeakObjectContainer(with: newValue), .OBJC_ASSOCIATION_ASSIGN)
+             
+            UIScrollView.swizzleReloadScrollData
             if self is UITableView {
-                UIScrollView.swizzleEndUpdates
+                UIScrollView.swizzleEndAllUpdates
             }
         }
     }
+     func removeAssociation(){
+        UIScrollView.swizzleBack
+       
+    }
+    
     //MARK: - Method Swizzling
-    @objc private func tableViewSwizzledReloadData() {
-        tableViewSwizzledReloadData()
+    @objc private func tableViewSwizzleReloadData() {
+        tableViewSwizzleReloadData()
         reloadEmptyDataSet()
     }
     
-    @objc private func tableViewSwizzledEndUpdates() {
-        tableViewSwizzledEndUpdates()
+    @objc private func tableViewSwizzledEndAllUpdates() {
+        tableViewSwizzledEndAllUpdates()
         reloadEmptyDataSet()
     }
     
-    @objc private func collectionViewSwizzledReloadData() {
-        collectionViewSwizzledReloadData()
+    @objc private func collectionViewSwizzledAllReloadData() {
+        collectionViewSwizzledAllReloadData()
         reloadEmptyDataSet()
+       
     }
     
     private class func swizzleMethod(for aClass: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
@@ -62,21 +69,33 @@ extension UIScrollView {
         }
     }
     
-    private static let swizzleReloadData: () = {
+    private static let swizzleReloadScrollData: () = {
         let tableViewOriginalSelector = #selector(UITableView.reloadData)
-        let tableViewSwizzledSelector = #selector(UIScrollView.tableViewSwizzledReloadData)
+        let tableViewSwizzledSelector = #selector(UIScrollView.tableViewSwizzleReloadData)
         
         swizzleMethod(for: UITableView.self, originalSelector: tableViewOriginalSelector, swizzledSelector: tableViewSwizzledSelector)
         
         let collectionViewOriginalSelector = #selector(UICollectionView.reloadData)
-        let collectionViewSwizzledSelector = #selector(UIScrollView.collectionViewSwizzledReloadData)
+        let collectionViewSwizzledSelector = #selector(UIScrollView.collectionViewSwizzledAllReloadData)
         
         swizzleMethod(for: UICollectionView.self, originalSelector: collectionViewOriginalSelector, swizzledSelector: collectionViewSwizzledSelector)
     }()
     
-    private static let swizzleEndUpdates: () = {
+    private static let swizzleBack: () = {
+        let tableViewSwizzledSelector  = #selector(UITableView.reloadData)
+        let tableViewOriginalSelector = #selector(UIScrollView.tableViewSwizzleReloadData)
+        
+        swizzleMethod(for: UITableView.self, originalSelector: tableViewOriginalSelector, swizzledSelector: tableViewSwizzledSelector)
+        
+        let collectionViewOriginalSelector = #selector(UICollectionView.reloadData)
+        let collectionViewSwizzledSelector = #selector(UIScrollView.collectionViewSwizzledAllReloadData)
+        
+        swizzleMethod(for: UICollectionView.self, originalSelector: collectionViewOriginalSelector, swizzledSelector: collectionViewSwizzledSelector)
+    }()
+    
+    private static let swizzleEndAllUpdates: () = {
         let originalSelector = #selector(UITableView.endUpdates)
-        let swizzledSelector = #selector(UIScrollView.tableViewSwizzledEndUpdates)
+        let swizzledSelector = #selector(UIScrollView.tableViewSwizzledEndAllUpdates)
         
         swizzleMethod(for: UITableView.self, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
     }()

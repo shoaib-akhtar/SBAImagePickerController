@@ -26,12 +26,12 @@ protocol AlbumPhotosViewModel {
 }
 
 class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
-    fileprivate var coordinator: PhotosPickerCoordinator
+    fileprivate var coordinator: SBAImagePickerController
     private var collection: PHAssetCollection
     private var completion: cameraClosure
     fileprivate var assets: PHFetchResult<AnyObject>?
     private lazy var progressHud = ProgressHUD(text: progressText)
-    private let progressText : String = "loading"
+    private let progressText : String = Transaltions.shared.translation(for: "loading")
     private var pickerController: PhotosPickerController? = PhotosPickerController()
     private var requestIdMap = [IndexPath: PHImageRequestID]()
     fileprivate var viewModels: [Any] = []
@@ -40,7 +40,7 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     
     fileprivate let maximumImages : Int
     
-    init(coordinator: PhotosPickerCoordinator, collection: PHAssetCollection,maximumImages: Int = 10, completion: @escaping cameraClosure) {
+    init(coordinator: SBAImagePickerController, collection: PHAssetCollection,maximumImages: Int = 10, completion: @escaping cameraClosure) {
         self.coordinator = coordinator
         self.collection = collection
         self.completion = completion
@@ -94,7 +94,7 @@ class AlbumPhotosViewModelImp: AlbumPhotosViewModel {
     }
     
     func done() {
-        progressHud.show()
+        progressHud.show(view: self.coordinator.view())
         PhotoManager.loadImages(for: selectedAssets.assets) { [weak self](images) in
             guard let strongSelf = self else {return}
             strongSelf.progressHud.hide()
@@ -156,7 +156,9 @@ class MultipleAlbumPhotosViewModel: AlbumPhotosViewModelImp {
     
     override func title() -> String {
         let count = selectedAssets.assets.count
-        return (count == 0) ? "Select Pictures" : "\("Selected Pictures:") \(count)" + "/" + "\(maximumImages)"
+//        return (count == 0) ? "Select Pictures" : "\("Selected Pictures:") \(count)" + "/" + "\(maximumImages)"
+        return (count == 0) ? Transaltions.shared.translation(for: "Select Pictures") : "\(Transaltions.shared.translation(for: "Selected Pictures:")) \(count)" + "/" + "\(maximumImages)"
+
     }
     
     override func showDone() -> Bool {

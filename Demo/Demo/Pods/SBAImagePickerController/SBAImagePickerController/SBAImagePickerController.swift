@@ -6,27 +6,46 @@
 //  Copyright © 2019 QuantumCPH. All rights reserved.
 //
 
+/* Translate these keys in your parent app to translate SBAImagePickerController
+"Done"
+"Select Pictures"
+"Selected Pictures:"
+"Photos";
+"No Photo Permissions"
+"Please grant photo permissions in Settings"
+"Settings"
+"Whoops !!"
+"Sorry this album does not contain any photo. Please select other albums to select photos"
+"Cancel"
+"Albums"
+"loading"
+*/
+
 import UIKit
 import Photos
 
 public typealias cameraClosure = (_ images: [UIImage]?,_ skiped: Bool) -> Void
+public typealias translationsClosure = (_ key: String) -> String
 
-public class PhotosPickerCoordinator {
+public class SBAImagePickerController {
     fileprivate let rootViewController: UIViewController
-    fileprivate var photoAlbumsController: PhotoAlbumsViewController?
-    fileprivate var albumPhotosCollectionViewController: AlbumPhotosViewController?
+    fileprivate weak var photoAlbumsController: PhotoAlbumsViewController?
+    fileprivate weak var albumPhotosCollectionViewController: AlbumPhotosViewController?
     fileprivate var completionBlock: cameraClosure
     fileprivate let maximumImages: Int
-    init(rootViewCOntroler: UIViewController,maximumImages: Int = 10, completionBlock: @escaping cameraClosure) {
+    public init(rootViewCOntroler: UIViewController,maximumImages: Int = 10, completionBlock: @escaping cameraClosure) {
         self.rootViewController = rootViewCOntroler
         self.completionBlock = completionBlock
         self.maximumImages = maximumImages
     }
-    func push() {
+    public func push() {
         rootViewController.show(start(), sender: nil)
     }
+    public func translate (closure: @escaping translationsClosure){
+        Transaltions.shared.closure = closure
+    }
     
-    func present() {
+    public func present() {
         let nav = UINavigationController.init(rootViewController: start())
         rootViewController.present(nav, animated: true, completion: nil)
     }
@@ -34,9 +53,19 @@ public class PhotosPickerCoordinator {
     func loadAlbumPictures(for collection: PHAssetCollection) {
         load(with: AlbumPhotosViewModelImp(coordinator: self, collection: collection, completion: completionBlock))
     }
+    func view() -> UIView {
+        if let vc = albumPhotosCollectionViewController{
+            return vc.view
+        }
+        return rootViewController.view
+    }
+    deinit {
+           UIScrollView().removeAssociation()
+           print("deinit sba imagepicker")
+       }
 }
 
-extension PhotosPickerCoordinator {
+extension SBAImagePickerController {
     
     func errorOccured(with error: PhotosPickerErrorCode.error?) {
         
@@ -80,7 +109,7 @@ extension PhotosPickerCoordinator {
     }
 }
 
-extension PhotosPickerCoordinator {
+extension SBAImagePickerController {
     
     func dismiss() {
         DispatchQueue.main.async {
@@ -93,8 +122,23 @@ extension PhotosPickerCoordinator {
     }
 }
 
-public class MultiplePhotosPickerCoordinator: PhotosPickerCoordinator {
+public class SBAMultipleImagePickerController: SBAImagePickerController {
     override func loadAlbumPictures(for collection: PHAssetCollection) {
-        load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection,maximumImages: maximumImages, completion: completionBlock))//
+        load(with: MultipleAlbumPhotosViewModel(coordinator: self, collection: collection,maximumImages: maximumImages, completion: completionBlock))
+    }
+}
+
+class Transaltions{
+    static let shared = Transaltions()
+    var closure : translationsClosure?
+    private init() {
+        
+    }
+    
+    func translation(for key: String) -> String {
+        if let closure = closure{
+           return closure(key)
+        }
+        return key
     }
 }

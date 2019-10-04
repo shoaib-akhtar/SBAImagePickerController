@@ -8,12 +8,12 @@
 
 import Foundation
 struct PhotoPermissionAlert {
-    static let title = "No Photo Permissions"
-    static let message = "Please grant photo permissions in Settings"
-    static let actionButtonTitle = "Settings"
+    static let title = Transaltions.shared.translation(for: "No Photo Permissions")
+    static let message = Transaltions.shared.translation(for: "Please grant photo permissions in Settings")
+    static let actionButtonTitle = Transaltions.shared.translation(for: "Settings")
 }
 struct NoPhotosInAlbum {
-    static let title = "Whoops !!"
-    static let message = "Sorry this album does not contain any photo. Please select other albums to select photos "
+    static let title = Transaltions.shared.translation(for: "Whoops !!")
+    static let message = Transaltions.shared.translation(for: "Sorry this album does not contain any photo. Please select other albums to select photos ") 
     static let image = "hg-error.png"
 }

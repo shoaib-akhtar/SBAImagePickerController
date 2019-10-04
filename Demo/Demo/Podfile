@@ -6,6 +6,6 @@ target 'Demo' do
   use_frameworks!
 
   # Pods for Demo
-pod 'SBAImagePickerController', :git => 'https://github.com/shoaib-akhtar/SBAImagePickerController', :branch => 'master'
+pod 'SBAImagePickerController'
 
 end

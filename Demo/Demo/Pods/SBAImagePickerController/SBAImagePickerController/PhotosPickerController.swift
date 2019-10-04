@@ -61,7 +61,6 @@ extension PhotosPickerController {
     func fetchPhotos(in collection: PHAssetCollection, fetchLimit:Int = 0, completionBlock: @escaping PhotosPickerControllerPicturesBlock) {
         let options = PHFetchOptions()
         options.fetchLimit = fetchLimit
-        options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: fetchLimit == 0)]
         let assets = PHAsset.fetchAssets(in: collection, options: options) as? PHFetchResult<AnyObject>
         completionBlock(assets)
     }

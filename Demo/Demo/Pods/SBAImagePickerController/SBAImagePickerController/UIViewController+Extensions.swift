@@ -45,7 +45,7 @@ extension UIViewController {
     
     func showError (title : String , message: String ,  actionTitle: String ,completion:@escaping(SBButtonTappedType)-> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { action in
+        alert.addAction(UIAlertAction(title: Transaltions.shared.translation(for: "Cancel"), style: UIAlertAction.Style.default, handler: { action in
              completion(.cancel)
         }))
         alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.destructive, handler: { action in
