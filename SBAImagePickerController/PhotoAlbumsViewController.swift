@@ -12,7 +12,9 @@ class PhotoAlbumsViewController: BaseViewController, StoryboardInitializable {
     static func storyboardName() -> String {
         return "SBAImagePickerController"
     }
-    
+    deinit {
+        print("Deinit")
+    }
     @IBOutlet weak var collectionView: UICollectionView!
 
     var viewModel: PhotosPickerViewModel!
@@ -30,12 +32,12 @@ class PhotoAlbumsViewController: BaseViewController, StoryboardInitializable {
     
     private func configure() {
         if isModal{
-            addRightBarButton(title: "Cancel")
+            addRightBarButton(title: Transaltions.shared.translation(for: "Cancel"))
         }
     }
     
     private func render() {
-        title = "Albums"
+        title = Transaltions.shared.translation(for: "Albums")
     }
     
     override func rightBarButtonAction() {

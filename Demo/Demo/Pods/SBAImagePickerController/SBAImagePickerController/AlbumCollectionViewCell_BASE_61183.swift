@@ -29,7 +29,7 @@ class AlbumCollectionViewCell: UICollectionViewCell,DequeueInitializable {
         viewModel.fetchFirstImageThumbnail {[weak self] (asset) in
             guard let strongself = self else {return}
             
-            if let assets = asset, let viewAsset = assets.lastObject as? PHAsset {
+            if let assets = asset, let viewAsset = assets.firstObject as? PHAsset {
                 let _ =    PhotoManager.loadImage(for: viewAsset, targetSize: size, contentMode: .aspectFill, completion: { [weak self] (image) in
                     
                     self?.thumnailImageView.image = image

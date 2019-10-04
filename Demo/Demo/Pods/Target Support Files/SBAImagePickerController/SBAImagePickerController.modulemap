@@ -1,6 +1,0 @@
-framework module SBAImagePickerController {
-  umbrella header "SBAImagePickerController-umbrella.h"
-
-  export *
-  module * { export * }
-}

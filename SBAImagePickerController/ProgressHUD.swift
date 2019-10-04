@@ -74,15 +74,19 @@ class ProgressHUD: UIVisualEffectView {
         }
     }
     
-    func show() {
-        superview?.addSubview(self)
-        self.isHidden = false
+    func show(view: UIView) {
+        DispatchQueue.main.async {
+            view.addSubview(self)
+            view.bringSubviewToFront(self)
+            self.isHidden = false
+        }
     }
     
     func hide() {
-        
-        self.isHidden = true
-        self.removeFromSuperview()
+        DispatchQueue.main.async {
+            self.isHidden = true
+            self.removeFromSuperview()
+        }
     }
 
 }

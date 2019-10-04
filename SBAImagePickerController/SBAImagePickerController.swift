@@ -28,7 +28,7 @@ public typealias cameraClosure = (_ images: [UIImage]?,_ skiped: Bool) -> Void
 public typealias translationsClosure = (_ key: String) -> String
 
 public class SBAImagePickerController {
-    fileprivate let rootViewController: UIViewController
+    fileprivate weak var rootViewController: UIViewController?
     fileprivate weak var photoAlbumsController: PhotoAlbumsViewController?
     fileprivate weak var albumPhotosCollectionViewController: AlbumPhotosViewController?
     fileprivate var completionBlock: cameraClosure
@@ -39,7 +39,7 @@ public class SBAImagePickerController {
         self.maximumImages = maximumImages
     }
     public func push() {
-        rootViewController.show(start(), sender: nil)
+        rootViewController?.show(start(), sender: nil)
     }
     public func translate (closure: @escaping translationsClosure){
         Transaltions.shared.closure = closure
@@ -47,7 +47,7 @@ public class SBAImagePickerController {
     
     public func present() {
         let nav = UINavigationController.init(rootViewController: start())
-        rootViewController.present(nav, animated: true, completion: nil)
+        rootViewController?.present(nav, animated: true, completion: nil)
     }
     
     func loadAlbumPictures(for collection: PHAssetCollection) {
@@ -57,12 +57,11 @@ public class SBAImagePickerController {
         if let vc = albumPhotosCollectionViewController{
             return vc.view
         }
-        return rootViewController.view
+        return rootViewController?.view ?? UIView()
     }
     deinit {
-           UIScrollView().removeAssociation()
-           print("deinit sba imagepicker")
-       }
+        print("Deinit")
+    }
 }
 
 extension SBAImagePickerController {
@@ -114,9 +113,9 @@ extension SBAImagePickerController {
     func dismiss() {
         DispatchQueue.main.async {
             if self.photoAlbumsController?.isModal ?? true{
-                self.rootViewController.dismiss(animated: true, completion: nil)
+                self.rootViewController?.dismiss(animated: true, completion: nil)
             }else{
-                self.rootViewController.navigationController?.popToRootViewController(animated: true)
+                self.rootViewController?.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
