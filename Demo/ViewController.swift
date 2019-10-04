@@ -15,11 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        first.titleLabel?.isOpaque = true
-        first.titleLabel?.backgroundColor = .white
-        
-        second.titleLabel?.isOpaque = true
-        second.titleLabel?.backgroundColor = .white
+//        first.titleLabel?.isOpaque = true
+//        first.titleLabel?.backgroundColor = .syste
+//        
+//        second.titleLabel?.isOpaque = true
+//        second.titleLabel?.backgroundColor = .white
     }
 
     @IBAction func push(_ sender: Any) {
