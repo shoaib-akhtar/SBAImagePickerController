@@ -1,0 +1,16 @@
+PODS:
+  - SBAImagePickerController (1.3)
+
+DEPENDENCIES:
+  - SBAImagePickerController
+
+SPEC REPOS:
+  trunk:
+    - SBAImagePickerController
+
+SPEC CHECKSUMS:
+  SBAImagePickerController: ff7e376afd5b69232b3a9cd61668a1651d9fc4f6
+
+PODFILE CHECKSUM: 84df283eaf0bfe123dc3f063f822a6eef1382bb4
+
+COCOAPODS: 1.8.0

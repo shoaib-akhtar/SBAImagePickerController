@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CEA4698D-F3F2-4E94-A0D9-ED179C7C1235"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0480D04B-89E4-4CAD-93C1-57F5F4CC9AD9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBASwipeGestureRecognizer.swift"
+            timestampString = "587207288.7453769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD274085-6D56-4E22-ABA9-4BC4B8BAF142"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBASwipeGestureRecognizer.swift"
+            timestampString = "587207288.745544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D5870FF-563B-431F-B257-5F836174C9CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBAImagePickerController/AlbumPhotosViewModel.swift"
+            timestampString = "587989609.845102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "done()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5B2B0CA-B595-400D-8ECD-CB2E73C83420"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBAImagePickerController/PhotosPickerController.swift"
+            timestampString = "587974232.080493"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "fetchPhotos(in:fetchLimit:completionBlock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A746EDBE-85BC-4807-9DDF-86E6184F8A9A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBAImagePickerController/AlbumPhotosViewModel.swift"
+            timestampString = "587989609.845197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "loadImages()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A746EDBE-85BC-4807-9DDF-86E6184F8A9A - 82d7275b2377668d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SBAImagePickerController.AlbumPhotosViewModelImp.loadImages() -&gt; ()"
+                  moduleName = "SBAImagePickerController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jawadali/Documents/ImagePicker/Demo/Demo/Pods/SBAImagePickerController/SBAImagePickerController/AlbumPhotosViewModel.swift"
+                  timestampString = "587974038.694015"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "A746EDBE-85BC-4807-9DDF-86E6184F8A9A - 50fd9f84c22c1b63"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.PHFetchResult&lt;Swift.AnyObject&gt;&gt;) -&gt; () in SBAImagePickerController.AlbumPhotosViewModelImp.loadImages() -&gt; ()"
+                  moduleName = "SBAImagePickerController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jawadali/Documents/ImagePicker/Demo/Demo/Pods/SBAImagePickerController/SBAImagePickerController/AlbumPhotosViewModel.swift"
+                  timestampString = "587974038.695614"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98FBC997-8C55-48F0-A7CB-3C60F944E518"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBAImagePickerController/PhotosPickerController.swift"
+            timestampString = "587974232.080599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "fetchPhotos(in:fetchLimit:completionBlock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8529B279-CF38-4EE9-BC8A-149AC656495C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Demo/ViewController.swift"
+            timestampString = "587989609.845275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0E0DB56-C9CF-40C0-9FC4-F1E9D05083B0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SBAImagePickerController/SBAImagePickerController/PhotoManager.swift"
+            timestampString = "587989609.845332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "loadImages(for:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
