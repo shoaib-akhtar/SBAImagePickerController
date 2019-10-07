@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SBAImagePickerController"
-  s.version      = "1.5"
+  s.version      = "1.6"
   s.summary      = "An easy multiple image picker controller for photo library."
   s.homepage     = "https://github.com/shoaib-akhtar/SBAImagePickerController"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
