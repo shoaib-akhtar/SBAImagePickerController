@@ -27,7 +27,6 @@
 		4830AE41230FF343005F0510 /* SBAImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830AE26230FF342005F0510 /* SBAImagePickerController.swift */; };
 		4830AE42230FF343005F0510 /* AlbumPhotoCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830AE27230FF342005F0510 /* AlbumPhotoCollectionViewCellViewModel.swift */; };
 		4830AE43230FF343005F0510 /* PhotosPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830AE28230FF342005F0510 /* PhotosPickerViewModel.swift */; };
-		4830AE44230FF343005F0510 /* UIScrollView+EmptyDataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830AE29230FF342005F0510 /* UIScrollView+EmptyDataControl.swift */; };
 		4830AE45230FF343005F0510 /* AlbumCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830AE2A230FF342005F0510 /* AlbumCollectionViewCellViewModel.swift */; };
 		4830AE46230FF343005F0510 /* PhotoAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830AE2B230FF342005F0510 /* PhotoAlbumsViewController.swift */; };
 		4830AE47230FF343005F0510 /* SBAImagePickerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4830AE2C230FF342005F0510 /* SBAImagePickerController.storyboard */; };
@@ -62,7 +61,6 @@
 		4830AE26230FF342005F0510 /* SBAImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBAImagePickerController.swift; sourceTree = "<group>"; };
 		4830AE27230FF342005F0510 /* AlbumPhotoCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		4830AE28230FF342005F0510 /* PhotosPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosPickerViewModel.swift; sourceTree = "<group>"; };
-		4830AE29230FF342005F0510 /* UIScrollView+EmptyDataControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+EmptyDataControl.swift"; sourceTree = "<group>"; };
 		4830AE2A230FF342005F0510 /* AlbumCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		4830AE2B230FF342005F0510 /* PhotoAlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumsViewController.swift; sourceTree = "<group>"; };
 		4830AE2C230FF342005F0510 /* SBAImagePickerController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBAImagePickerController.storyboard; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				4830AE26230FF342005F0510 /* SBAImagePickerController.swift */,
 				4830AE27230FF342005F0510 /* AlbumPhotoCollectionViewCellViewModel.swift */,
 				4830AE28230FF342005F0510 /* PhotosPickerViewModel.swift */,
-				4830AE29230FF342005F0510 /* UIScrollView+EmptyDataControl.swift */,
 				4830AE2A230FF342005F0510 /* AlbumCollectionViewCellViewModel.swift */,
 				4830AE2B230FF342005F0510 /* PhotoAlbumsViewController.swift */,
 				4830AE2C230FF342005F0510 /* SBAImagePickerController.storyboard */,
@@ -252,7 +249,6 @@
 				4830AE49230FF343005F0510 /* UICollectionView+Extensions.swift in Sources */,
 				4830AE35230FF343005F0510 /* BaseViewController.swift in Sources */,
 				4830AE31230FF343005F0510 /* Constants.swift in Sources */,
-				4830AE44230FF343005F0510 /* UIScrollView+EmptyDataControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
